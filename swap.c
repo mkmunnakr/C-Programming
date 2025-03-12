@@ -1,23 +1,23 @@
 #include<stdio.h>
-#include<conio.h>
-void main()
+
+void _swap(int *a , int *b);
+int main()
 {
-        int a,b,sum;
-        printf("Enter any two number: ");
-        scanf("%d%d",&a,&b);
+    int x,y;
+    printf("Enter first num =");
+    scanf("%d",&x);
+    printf("Enter second num=");
+    scanf("%d",&y);
+    _swap(&x,&y);
+    printf("x=%d & y=%d\n",x,y); 
 
-        /*
-        a=a+b;
-        b=a-b;
-        a=a-b;
-        */
-        sum=b;
-        b=a;
-        a=sum;
-        printf("\n %d is a,\n %d is b",a,b);
+    return 0;
+}
 
-
-        getch();
-
-
+// call by reference
+void _swap(int *a , int *b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
 }
